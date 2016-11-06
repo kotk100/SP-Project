@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zbudim se</title>
+
+    <link rel='stylesheet' href='../public/stylesheets/footer.css' />
+    <link rel='stylesheet' href='../public/stylesheets/main.css' />
+</head>
+<body>
+    <div id="background"></div>
+    <div id="page">
+        <nav>
+            <form action="/" method="get">
+                <div>
+                    <input type="submit" style="float:right; margin-left:20px;" value="Home" />
+                </div>
+            </form>
+            <form action="/logout" method="get">
+                <div>
+                    <input type="submit" style="float:right;" value="Logout" />
+                </div>
+            </form>
+        </nav>
+
+        <div class="content" >
+            <div id="left">
+                <p>content</p>
+            </div>
+            <div id="timetable">
+                <button>Add course</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>7:00</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>8:00</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>9:00</th>
+                        <th></th>
+                        <th></th>
+                        <th rowspan="2">Some lecture</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>10:00</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>11:00</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>12:00</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="footer">
+            <p>Zbudim.se</p>
+            <a href="/About">About</a>
+        </div>
+    </div>
+</body>
+</html>
