@@ -6,9 +6,22 @@
     height: 40px;
     background-color: rgba(255, 255, 255, 0.75);
     width: 100%;
+    text-align: center;
+    display: table;
 }
 
 #footer * {
-    display: inline;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
 }
 
+#footer a {
+    margin-left: 10%;
+}
+
+@media only screen and (max-height: 400px){
+    #footer {
+        display: none;
+    }
+}

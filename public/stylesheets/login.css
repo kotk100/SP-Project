@@ -5,12 +5,11 @@ body {
     -o-background-size: cover;
     background-size: cover;
     font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
-    min-height:100%;
 }
 
 .content-wrapper{
     width: 400px;
-    height: 230px;
+    height: 200px;
 
     position: absolute;
     top:0;
@@ -24,6 +23,25 @@ body {
     padding: 20px 30px 30px 30px;
     border-radius: 15px 40px 15px 40px;
     box-shadow: 15px 15px 5px rgba(0, 0, 0, 0.30);
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        background: rgb(0, 185, 255);
+        font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+    }
+
+    .content-wrapper{
+        width: 90%;
+        min-height: 240px;
+        height: 30%;
+        box-sizing: border-box;
+
+        background-color: rgba(255, 255, 255, 0.80);
+        padding: 15px 25px 25px 25px;
+        border-radius: 15px 40px 15px 40px;
+        box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.30);
+    }
 }
 
 .title {
@@ -48,14 +66,17 @@ body {
     white-space: nowrap;
 }
 
+.form {
+    margin: 2px 0px 0px 10px;
+    font-size: 14px;
+}
+
 .form-group * {
     display: block;
-    margin: 2px 0px 0px 10px;
     color: rgb(115, 115, 115);
 }
 
 .form-group {
-    font-size: 14px;
     margin-bottom: 15px;
 }
 
