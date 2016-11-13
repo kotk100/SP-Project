@@ -4,16 +4,17 @@
     <head>
         <title>Zbudim se</title>
         <link rel='stylesheet' href='../public/stylesheets/login.css' />
+        <link rel='stylesheet' href='../public/stylesheets/footer.css' />
     </head>
     <body>
-        <div>
+        <div class="content-wrapper">
             <p class="title">Login</p>
             <form action="/{{ lang }}/login" method="post">
                 <div class="form-group">
                     <label>Username or email</label>
                     <input type="text" name="username">
                 </div>
-                <div >
+                <div class="form-group">
                     <label>Password</label>
                     <input type="password" name="password">
                 </div>
