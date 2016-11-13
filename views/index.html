@@ -8,23 +8,22 @@
     <link rel='stylesheet' href='../public/stylesheets/main.css' />
 </head>
 <body>
-    <div id="background"></div>
-    <div id="page">
-        <nav>
-            <form action="/" method="get">
-                <div>
-                    <input type="submit" style="float:right; margin-left:20px;" value="Settings" />
-                </div>
-            </form>
-            <form action="/logout" method="get">
-                <div>
-                    <input type="submit" style="float:right;" value="Logout" />
-                </div>
-            </form>
-        </nav>
+    <nav>
+        <form action="/" method="get">
+            <div>
+                <input type="submit" style="float:right; margin-left:20px;" value="Settings" />
+            </div>
+        </form>
+        <form action="/logout" method="get">
+            <div>
+                <input type="submit" style="float:right;" value="Logout" />
+            </div>
+        </form>
+    </nav>
 
-        <div class="content" >
-            <div id="left">
+    <main>
+        <div class="row">
+            <div class="col-2">
                 <div>
                     <p>Time to wake up:</p>
                     <p>8:00</p>
@@ -41,7 +40,7 @@
                 </div>
                 <hr>
             </div>
-            <div id="timetable">
+            <div class="col-7" id="timetable">
                 <button>Add course</button>
                 <table>
                     <thead>
@@ -107,10 +106,10 @@
                 </table>
             </div>
         </div>
-        <div id="footer">
-            <p>Zbudim.se</p>
-            <a href="/About">About</a>
-        </div>
-    </div>
+    </main>
+    <footer>
+        Zbudim.se
+        <a href="/About">About</a>
+    </footer>
 </body>
 </html>
