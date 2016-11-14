@@ -21,8 +21,9 @@
         </form>
     </nav>
 
+    <div class="wrapper" style="padding-bottom: 50px;">
     <main>
-        <div class="row">
+        <div class="row h100">
             <div class="col-2">
                 <div>
                     <p>Time to wake up:</p>
@@ -40,76 +41,47 @@
                 </div>
                 <hr>
             </div>
-            <div class="col-7" id="timetable">
-                <button>Add course</button>
-                <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Mon</th>
-                            <th>Tue</th>
-                            <th>Wed</th>
-                            <th>Thu</th>
-                            <th>Fri</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th>7:00</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>8:00</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>9:00</th>
-                        <th></th>
-                        <th></th>
-                        <th rowspan="2">Some lecture</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>10:00</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>11:00</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>12:00</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    </tbody>
-                </table>
+            <div class="col-7 h100">
+                <div class="row" id="controls">
+                    <button>Add course</button>
+                </div>
+                <div class="row" id="timetable">
+                    <div class="col-2-1 h100">
+                        6:00
+                    </div>
+                    <div class="col-2-1 h100">
+                        a
+                    </div>
+                    <div class="col-2-1 h100">
+                        <div class="lecture c1"> SP_P</div>
+                        <div class="lecture c2"> PS_P</div>
+                        <div class="lecture c3"> PS_LV</div>
+                    </div>
+                    <div class="col-2-1 h100">
+                        <div class="lecture c4"> PRPO_P</div>
+                        <div class="lecture c5"> OUI_P</div>
+                        <div class="lecture c6"> DN_P</div>
+                        <div class="lecture c7"> TUP_LV</div>
+                    </div>
+                    <div class="col-2-1 h100">
+                        <div class="lecture c8"> MRO_LV</div>
+                        <div class="lecture c1"> OUI_LV</div>
+                        <div class="lecture c2"> DN_LV</div>
+                        <div class="lecture c3"> PRPO_LV</div>
+                    </div>
+                    <div class="col-2-1 h100">
+                        <div class="lecture c4"> MRO_P</div>
+                        <div class="lecture c5"> SP_LV</div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
+    </div>
     <footer>
         Zbudim.se
         <a href="/About">About</a>
     </footer>
+
 </body>
 </html>
