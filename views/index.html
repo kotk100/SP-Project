@@ -6,6 +6,7 @@
 
     <link rel='stylesheet' href='../public/stylesheets/footer.css' />
     <link rel='stylesheet' href='../public/stylesheets/main.css' />
+    <script type="text/javascript" src="../public/javascripts/main.js"></script>
 </head>
 <body>
     <nav>
@@ -24,7 +25,7 @@
     <div class="wrapper" style="padding-bottom: 50px;">
     <main>
         <div class="row h100">
-            <div class="col-2">
+            <div class="col-1-2">
                 <div>
                     <p>Time to wake up:</p>
                     <p>8:00</p>
@@ -41,7 +42,7 @@
                 </div>
                 <hr>
             </div>
-            <div class="col-7 h100">
+            <div class="col-1-7 h100">
                 <div class="row" id="controls">
                     <button>Add course</button>
                 </div>
@@ -53,25 +54,72 @@
                         a
                     </div>
                     <div class="col-2-1 h100">
-                        <div class="lecture c1"> SP_P</div>
-                        <div class="lecture c2"> PS_P</div>
-                        <div class="lecture c3"> PS_LV</div>
+                        <div class="lecture c1">
+                            <p class="inl">SP_P</p>
+                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                            <div class="dropdown">
+                                <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="#home">Home</a>
+                                    <a href="#about">About</a>
+                                    <a href="#contact">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lecture c2">
+                            <p class="inl">PS_P</p>
+                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                        </div>
+                        <div class="lecture c3">
+                            <p class="inl">PS_LV</p>
+                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                        </div>
                     </div>
                     <div class="col-2-1 h100">
-                        <div class="lecture c4"> PRPO_P</div>
-                        <div class="lecture c5"> OUI_P</div>
-                        <div class="lecture c6"> DN_P</div>
-                        <div class="lecture c7"> TUP_LV</div>
+                        <div class="lecture c4">
+                            <p class="inl">PRPO_P</p>
+                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                        </div>
+                        <div class="lecture c5">
+                            <p class="inl">OUI_P</p>
+                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                        </div>
+                        <div class="lecture c6">
+                            <p class="inl">DN_P</p>
+                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                        </div>
+                        <div class="lecture c7">
+                            <p class="inl">TUP_LV</p>
+                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                        </div>
                     </div>
                     <div class="col-2-1 h100">
-                        <div class="lecture c8"> MRO_LV</div>
-                        <div class="lecture c1"> OUI_LV</div>
-                        <div class="lecture c2"> DN_LV</div>
-                        <div class="lecture c3"> PRPO_LV</div>
+                        <div class="lecture c8">
+                            <p class="inl">MRO_LV</p>
+                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                        </div>
+                        <div class="lecture c1">
+                            <p class="inl">OUI_LV</p>
+                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                        </div>
+                        <div class="lecture c2">
+                            <p class="inl">DN_LV</p>
+                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                        </div>
+                        <div class="lecture c3">
+                            <p class="inl">PRPO_LV</p>
+                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                        </div>
                     </div>
                     <div class="col-2-1 h100">
-                        <div class="lecture c4"> MRO_P</div>
-                        <div class="lecture c5"> SP_LV</div>
+                        <div class="lecture c4">
+                            <p class="inl">MRO_P</p>
+                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                        </div>
+                        <div class="lecture c5">
+                            <p class="inl">SP_LV</p>
+                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                        </div>
                     </div>
                 </div>
             </div>
