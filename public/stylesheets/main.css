@@ -26,7 +26,7 @@ nav {
     height: 40px;
     padding:10px;
     box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(240, 240, 240, 0.75);
 }
 
 .wrapper{
@@ -45,10 +45,24 @@ main {
     border-radius: 35px;
 }
 
+.lh-1 {min-height: 48px;}
+.lh-2 {min-height: 96px;}
+.lh-3 {min-height: 144px;}
+.lh-4 {min-height: 192px;}
+.lh-5 {min-height: 240px;}
+.lh-6 {min-height: 288px;}
+.lh-7 {min-height: 336px;}
+.lh-8 {min-height: 384px;}
+.lh-9 {min-height: 432px;}
+.lh-10 {min-height: 480px;}
+.lh-11 {min-height: 528px;}
+.lh-12 {min-height: 576px;}
+.lh-13 {min-height: 624px;}
+.lh-14 {min-height: 672px;}
+
 .lecture{
     width:100%;
     height:6%;
-    min-height: 25px;
     box-sizing: border-box;
 
     padding:5px;
@@ -57,16 +71,43 @@ main {
     border-radius: 5px;
 }
 
+.day{
+    width:100%;
+    height:30px;
+    box-sizing: border-box;
+
+    padding:5px;
+    margin: 1%;
+
+    border-radius: 5px;
+
+    background-color: #dbdbdb;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.desc {
+    margin: 5px 0px 0px 0px;
+    display: block;
+}
+
 .del {
-    height: 15px;
-    width: 15px;
+    height: 16px;
+    width: 16px;
     box-sizing: border-box;
     padding: 2px;
     margin-left: 5px;
 
     font-weight: bold;
-    font-size: 10px;
-    line-height: 10px;
+    font-size: 12px;
+    line-height: 12px;
     text-align: center;
     text-decoration: none;
 
@@ -94,24 +135,29 @@ main {
 
 /* dropdown */
 .dropbtn {
-    height: 15px;
-    widht:15px;
+    height: 16px;
+    width:16px;
 
     padding: 2px;
     line-height: 10px;
     font-size: 10px;
     text-align: center;
+    box-sizing: border-box;
 
     background-color: transparent;
     color: white;
     border: 1px solid white;
     border-radius: 2px;
     cursor: pointer;
+}
 
+button::-moz-focus-inner {
+    border:0;
+    padding:0;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-    background-color: #3e8e41;
+    background-color: rgba(255, 255, 255, 0.3);;
 }
 
 .dropdown {
@@ -124,9 +170,10 @@ main {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 140px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
 }
 
 .dropdown-content a {
@@ -148,6 +195,12 @@ main * {
 [class*="col-"] {
     float: left;
     padding: 7px;
+    min-width: 120px;
+    box-sizing: border-box;
+}
+
+[class*="col-2"] {
+    border-left: 1px ridge #a0a0a0;
 }
 
 .h100{
@@ -164,12 +217,11 @@ main * {
 .col-1-8 {width: 88.88%;}
 .col-1-9 {width: 100%;}
 
-.col-2-1 {width: 16.66%;}
-.col-2-2 {width: 33.33%;}
-.col-2-3 {width: 50%;}
-.col-2-4 {width: 66.66%;}
-.col-2-5 {width: 83.33%;}
-.col-2-6 {width: 100%;}
+.col-2-1 {width: 20%;}
+.col-2-2 {width: 40%;}
+.col-2-3 {width: 60%;}
+.col-2-4 {width: 80%;}
+.col-2-5 {width: 100%;}
 
 .c1 { background-color: #933BCF;}
 .c2 { background-color: #F15F76;}
@@ -200,5 +252,7 @@ main * {
 
     [class*="col-2"] {
         width: 100%;
+        margin-bottom: 20px;
     }
+
 }
