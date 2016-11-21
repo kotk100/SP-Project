@@ -1,13 +1,11 @@
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    margin:0px;
+    padding:0px;
     height: 40px;
     background-color: rgba(240, 240, 240, 0.75);
     width: 100%;
     text-align: center;
-    display: table;
+    display: none;
     box-sizing: border-box;
 }
 
@@ -21,8 +19,8 @@ footer a {
     margin-left: 30%;
 }
 
-@media only screen and (max-height: 400px){
+@media only screen and (min-height: 400px){
     footer {
-        display: none;
+        display: table;
     }
 }

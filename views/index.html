@@ -6,231 +6,227 @@
 
     <link rel='stylesheet' href='../public/stylesheets/footer.css' />
     <link rel='stylesheet' href='../public/stylesheets/main.css' />
+    <link rel='stylesheet' href='../public/stylesheets/navigation.css' />
     <script type="text/javascript" src="../public/javascripts/main.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
     <nav>
-        <form action="/" method="get">
-            <div>
-                <input type="submit" style="float:right; margin-left:20px;" value="Settings" />
-            </div>
-        </form>
-        <form action="/logout" method="get">
-            <div>
-                <input type="submit" style="float:right;" value="Logout" />
-            </div>
-        </form>
+        <a href="./login.html"><button>Logout</button></a>
+        <a href="./settings.html"><button>Settings</button></a>
     </nav>
 
-    <div class="wrapper" style="padding-bottom: 50px;">
-    <main>
-        <div class="row h100">
-            <div class="col-1-2">
-                <div>
-                    <p>Time to wake up:</p>
-                    <p>8:00</p>
+    <div class="wrapper">
+        <main>
+            <div class="row h100">
+                <div class="col-1-2">
+                    <div>
+                        <p>Time to wake up:</p>
+                        <p>8:00</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <p>Bus leaves at:</p>
+                        <p>8:00</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <p>Time to wake up:</p>
+                        <p>8:00</p>
+                    </div>
+                    <hr>
                 </div>
-                <hr>
-                <div>
-                    <p>Bus leaves at:</p>
-                    <p>8:00</p>
+                <div class="col-1-7 h100">
+                    <div class="row" id="controls">
+                        <button>Add course</button>
+                    </div>
+                    <div class="row" id="timetable">
+                        <div class="col-2-1 h100">
+                            <div class="day">Mon</div>
+                            <div class="lecture lh-11"></div>
+                        </div>
+                        <div class="col-2-1 h100">
+                            <div class="day">Tue</div>
+                            <div class="lecture c1 lh-3">
+                                <p class="title inl">SP_P</p>
+                                <button class="del" onclick="deleteLecture(this.parentElement);">X</button>
+                                <div class="dropdown">
+                                    <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
+                                    <div class="dropdown-content">
+                                        <a onclick="deleteLecture(this.parentNode.parentNode.parentNode)">Remove course</a>
+                                        <a href="#about">Replace lecture</a>
+                                        <a href="#contact">Ask for exchange</a>
+                                    </div>
+                                </div>
+                                <br><p class="desc">
+                                    8:00 - 11:00 P1
+                                    Smrdel Aleš
+                                </p>
+                            </div>
+                            <div class="lecture c2 lh-3">
+                                <p class="title inl">PS_P</p>
+                                <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                                <div class="dropdown">
+                                    <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
+                                    <div class="dropdown-content">
+                                        <a onclick="deleteLecture(this.parentNode.parentNode.parentNode)">Remove course</a>
+                                        <a href="#about">Replace lecture</a>
+                                        <a href="#contact">Ask for exchange</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lecture lh-1"></div>
+                            <div class="lecture c3 lh-2">
+                                <p class="title inl">PS_LV</p>
+                                <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                                <div class="dropdown">
+                                    <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
+                                    <div class="dropdown-content">
+                                        <a onclick="deleteLecture(this.parentNode.parentNode.parentNode)">Remove course</a>
+                                        <a href="#about">Replace lecture</a>
+                                        <a href="#contact">Ask for exchange</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lecture lh-2"></div>
+                        </div>
+                        <div class="col-2-1 h100">
+                            <div class="day">Wed</div>
+                            <div class="lecture c4 lh-3">
+                                <p class="title inl">PRPO_P</p>
+                                <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                                <div class="dropdown">
+                                    <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
+                                    <div class="dropdown-content">
+                                        <a onclick="deleteLecture(this.parentNode.parentNode.parentNode)">Remove course</a>
+                                        <a href="#about">Replace lecture</a>
+                                        <a href="#contact">Ask for exchange</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lecture c5 lh-3">
+                                <p class="title inl">OUI_P</p>
+                                <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                                <div class="dropdown">
+                                    <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
+                                    <div class="dropdown-content">
+                                        <a onclick="deleteLecture(this.parentNode.parentNode.parentNode)">Remove course</a>
+                                        <a href="#about">Replace lecture</a>
+                                        <a href="#contact">Ask for exchange</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lecture c6 lh-3">
+                                <p class="title inl">DN_P</p>
+                                <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                                <div class="dropdown">
+                                    <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
+                                    <div class="dropdown-content">
+                                        <a onclick="deleteLecture(this.parentNode.parentNode.parentNode)">Remove course</a>
+                                        <a href="#about">Replace lecture</a>
+                                        <a href="#contact">Ask for exchange</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lecture c7 lh-2">
+                                <p class="title inl">TUP_LV</p>
+                                <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                                <div class="dropdown">
+                                    <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
+                                    <div class="dropdown-content">
+                                        <a onclick="deleteLecture(this.parentNode.parentNode.parentNode)">Remove course</a>
+                                        <a href="#about">Replace lecture</a>
+                                        <a href="#contact">Ask for exchange</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2-1 h100">
+                            <div class="day">Thu</div>
+                            <div class="lecture lh-3"></div>
+                            <div class="lecture c8 lh-2">
+                                <p class="title inl">MRO_LV</p>
+                                <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                                <div class="dropdown">
+                                    <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
+                                    <div class="dropdown-content">
+                                        <a onclick="deleteLecture(this.parentNode.parentNode.parentNode)">Remove course</a>
+                                        <a href="#about">Replace lecture</a>
+                                        <a href="#contact">Ask for exchange</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lecture c1 lh-2">
+                                <p class="title inl">OUI_LV</p>
+                                <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                                <div class="dropdown">
+                                    <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
+                                    <div class="dropdown-content">
+                                        <a onclick="deleteLecture(this.parentNode.parentNode.parentNode)">Remove course</a>
+                                        <a href="#about">Replace lecture</a>
+                                        <a href="#contact">Ask for exchange</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lecture c2 lh-2">
+                                <p class="title inl">DN_LV</p>
+                                <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                                <div class="dropdown">
+                                    <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
+                                    <div class="dropdown-content">
+                                        <a onclick="deleteLecture(this.parentNode.parentNode.parentNode)">Remove course</a>
+                                        <a href="#about">Replace lecture</a>
+                                        <a href="#contact">Ask for exchange</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lecture c3 lh-2">
+                                <p class="title inl">PRPO_LV</p>
+                                <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                                <div class="dropdown">
+                                    <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
+                                    <div class="dropdown-content">
+                                        <a onclick="deleteLecture(this.parentNode.parentNode.parentNode)">Remove course</a>
+                                        <a href="#about">Replace lecture</a>
+                                        <a href="#contact">Ask for exchange</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2-1 h100">
+                            <div class="day">Fri</div>
+                            <div class="lecture c4 lh-3">
+                                <p class="title inl">MRO_P</p>
+                                <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                                <div class="dropdown">
+                                    <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
+                                    <div class="dropdown-content">
+                                        <a onclick="deleteLecture(this.parentNode.parentNode.parentNode)">Remove course</a>
+                                        <a href="#about">Replace lecture</a>
+                                        <a href="#contact">Ask for exchange</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lecture lh-2"></div>
+                            <div class="lecture c5 lh-2">
+                                <p class="title inl">SP_LV</p>
+                                <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
+                                <div class="dropdown">
+                                    <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
+                                    <div class="dropdown-content">
+                                        <a onclick="deleteLecture(this.parentNode.parentNode.parentNode)">Remove course</a>
+                                        <a href="#about">Replace lecture</a>
+                                        <a href="#contact">Ask for exchange</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lecture lh-4"></div>
+                        </div>
+                    </div>
                 </div>
-                <hr>
-                <div>
-                    <p>Time to wake up:</p>
-                    <p>8:00</p>
-                </div>
-                <hr>
             </div>
-            <div class="col-1-7 h100">
-                <div class="row" id="controls">
-                    <button>Add course</button>
-                </div>
-                <div class="row" id="timetable">
-                    <div class="col-2-1 h100">
-                        <div class="day">Mon</div>
-                        <div class="lecture lh-11"></div>
-                    </div>
-                    <div class="col-2-1 h100">
-                        <div class="day">Tue</div>
-                        <div class="lecture c1 lh-3">
-                            <p class="title inl">SP_P</p>
-                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
-                            <div class="dropdown">
-                                <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
-                                <div class="dropdown-content">
-                                    <a href="#home">Remove course</a>
-                                    <a href="#about">Replace lecture</a>
-                                    <a href="#contact">Ask for exchange</a>
-                                </div>
-                            </div>
-                            <br><p class="desc">8:00 - 11:00 P1</p>
-                        </div>
-                        <div class="lecture c2 lh-3">
-                            <p class="title inl">PS_P</p>
-                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
-                            <div class="dropdown">
-                                <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
-                                <div class="dropdown-content">
-                                    <a href="#home">Remove course</a>
-                                    <a href="#about">Replace lecture</a>
-                                    <a href="#contact">Ask for exchange</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lecture lh-1"></div>
-                        <div class="lecture c3 lh-2">
-                            <p class="title inl">PS_LV</p>
-                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
-                            <div class="dropdown">
-                                <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
-                                <div class="dropdown-content">
-                                    <a href="#home">Remove course</a>
-                                    <a href="#about">Replace lecture</a>
-                                    <a href="#contact">Ask for exchange</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lecture lh-2"></div>
-                    </div>
-                    <div class="col-2-1 h100">
-                        <div class="day">Wen</div>
-                        <div class="lecture c4 lh-3">
-                            <p class="title inl">PRPO_P</p>
-                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
-                            <div class="dropdown">
-                                <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
-                                <div class="dropdown-content">
-                                    <a href="#home">Remove course</a>
-                                    <a href="#about">Replace lecture</a>
-                                    <a href="#contact">Ask for exchange</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lecture c5 lh-3">
-                            <p class="title inl">OUI_P</p>
-                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
-                            <div class="dropdown">
-                                <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
-                                <div class="dropdown-content">
-                                    <a href="#home">Remove course</a>
-                                    <a href="#about">Replace lecture</a>
-                                    <a href="#contact">Ask for exchange</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lecture c6 lh-3">
-                            <p class="title inl">DN_P</p>
-                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
-                            <div class="dropdown">
-                                <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
-                                <div class="dropdown-content">
-                                    <a href="#home">Remove course</a>
-                                    <a href="#about">Replace lecture</a>
-                                    <a href="#contact">Ask for exchange</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lecture c7 lh-2">
-                            <p class="title inl">TUP_LV</p>
-                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
-                            <div class="dropdown">
-                                <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
-                                <div class="dropdown-content">
-                                    <a href="#home">Remove course</a>
-                                    <a href="#about">Replace lecture</a>
-                                    <a href="#contact">Ask for exchange</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2-1 h100">
-                        <div class="day">Thu</div>
-                        <div class="lecture lh-3"></div>
-                        <div class="lecture c8 lh-2">
-                            <p class="title inl">MRO_LV</p>
-                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
-                            <div class="dropdown">
-                                <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
-                                <div class="dropdown-content">
-                                    <a href="#home">Remove course</a>
-                                    <a href="#about">Replace lecture</a>
-                                    <a href="#contact">Ask for exchange</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lecture c1 lh-2">
-                            <p class="title inl">OUI_LV</p>
-                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
-                            <div class="dropdown">
-                                <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
-                                <div class="dropdown-content">
-                                    <a href="#home">Remove course</a>
-                                    <a href="#about">Replace lecture</a>
-                                    <a href="#contact">Ask for exchange</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lecture c2 lh-2">
-                            <p class="title inl">DN_LV</p>
-                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
-                            <div class="dropdown">
-                                <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
-                                <div class="dropdown-content">
-                                    <a href="#home">Remove course</a>
-                                    <a href="#about">Replace lecture</a>
-                                    <a href="#contact">Ask for exchange</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lecture c3 lh-2">
-                            <p class="title inl">PRPO_LV</p>
-                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
-                            <div class="dropdown">
-                                <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
-                                <div class="dropdown-content">
-                                    <a href="#home">Remove course</a>
-                                    <a href="#about">Replace lecture</a>
-                                    <a href="#contact">Ask for exchange</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2-1 h100">
-                        <div class="day">Fri</div>
-                        <div class="lecture c4 lh-3">
-                            <p class="title inl">MRO_P</p>
-                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
-                            <div class="dropdown">
-                                <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
-                                <div class="dropdown-content">
-                                    <a href="#home">Remove course</a>
-                                    <a href="#about">Replace lecture</a>
-                                    <a href="#contact">Ask for exchange</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lecture lh-2"></div>
-                        <div class="lecture c5 lh-2">
-                            <p class="title inl">SP_LV</p>
-                            <button class="del" onclick="deleteLecture(this.parentNode);">X</button>
-                            <div class="dropdown">
-                                <button onclick="showDropdown(this.parentNode)" class="dropbtn">&#x25BC;</button>
-                                <div class="dropdown-content">
-                                    <a href="#home">Remove course</a>
-                                    <a href="#about">Replace lecture</a>
-                                    <a href="#contact">Ask for exchange</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lecture lh-4"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+        </main>
     </div>
     <footer>
         Zbudim.se

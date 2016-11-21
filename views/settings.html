@@ -6,59 +6,75 @@
 
     <link rel='stylesheet' href='../public/stylesheets/footer.css' />
     <link rel='stylesheet' href='../public/stylesheets/settings.css' />
+    <link rel='stylesheet' href='../public/stylesheets/navigation.css' />
+    <link rel='stylesheet' href='../public/stylesheets/general.css' />
+    <script type="text/javascript" src="../public/javascripts/validation.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-<nav>
-    <form action="/" method="get">
-        <div>
-            <input type="submit" style="float:right; margin-left:20px;" value="Home" />
-        </div>
-    </form>
-    <form action="/logout" method="get">
-        <div>
-            <input type="submit" style="float:right;" value="Logout" />
-        </div>
-    </form>
-</nav>
+    <nav>
+        <nav>
+            <a href="./login.html"><button>Logout</button></a>
+            <a href="./index.html"><button>Home</button></a>
+        </nav>
+    </nav>
 
-<div class="center" >
-    <p class="title">Settings</p>
-    <form action="" method="post" enctype="multipart/form-data">
-        <div>
-            <b>Email:</b>
-            <input type="email" id="Email" name="Email" value="email" />
-        </div>
-        <div>
-            <b>Home address:</b>
-            <input type="text" id="Address" name="Address" value="Home address" />
-        </div>
-        <div>
-            <b>Avaible modes of transportation:</b><br>
-            <input type="checkbox" style="margin-left:20px;" name="vehicle1" value="0">  Avto<br>
-            <input type="checkbox" style="margin-left:20px;" name="vehicle2" value="0">  Avtobus<br>
-            <input type="checkbox" style="margin-left:20px;" name="vehicle3" value="0">  Kolo<br>
-            <input type="checkbox" style="margin-left:20px;" name="vehicle4" value="0">  Hoja<br>
-        </div>
-        <div>
-            <b>Choose mode of transport based on:</b><br>
-            <input type="radio" style="margin-left:20px;" name="vehicle1" value="0">  Wheather<br>
-            <input type="radio" style="margin-left:20px;" name="vehicle2" value="0">  Manual<br>
-        </div>
-        <b>Time needed for preparation after waking up:</b>
-        <input type="text" id="time" name="time" value="<%= nastavitve[8] %>" />
-        <input type="submit" value="Shrani" />
-    </form>
-    <hr>
-    <form>
-            <b>Student ID:</b>
-            <input type="number" id="StudentId" name="StudentId" value="Student id" />
+    <main>
+        <div class="content-wrapper" >
+            <h1>Settings</h1>
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="form-group form-field">
+                    <label>Email:
+                        <input type="email" id="Email" name="Email" value="email@sample.com" onkeypress="validateEmail(this)" title="Must be a valid email address" pattern='(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))' required/>
+                    </label>
+                </div>
+                <div class="form-group form-field">
+                    <label>Home address:
+                        <input type="text" id="Address" name="Address" value="Home address" required/>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="checkb">Avaible modes of transportation:</label>
+                    <input type="checkbox" name="vehicle1" value="0">
+                    <label>Avto</label>
+                    <input type="checkbox" name="vehicle2" value="0">
+                    <label>Avtobus</label>
+                    <input type="checkbox" name="vehicle3" value="0">
+                    <label>Kolo</label>
+                    <input type="checkbox" name="vehicle4" value="0">
+                    <label>Hoja</label>
+                </div>
+                <div class="form-group">
+                    <label class="checkb">Choose mode of transport based on:</label>
+                    <input type="radio" name="wheather" checked="true" group>
+                    <label>Wheather</label>
+                    <input type="radio" name="wheather">
+                    <label>Manual</label>
+                </div>
+                <div class="form-group form-field">
+                    <label>Time needed for preparation after waking up:
+                        <input type="number" id="time" name="time" value="20" required/>
+                    </label>
+                </div>
+                <input type="submit" value="Save" />
+            </form>
+            <hr>
+            <form>
+                <div class="form-group form-field">
+                    <label>Student ID:
+                        <input type="number" id="StudentId" name="StudentId" value="0" />
+                    </label>
+                </div>
+                <input id="timeSubmit" type="submit" value="Import timetable" />
+            </form>
 
-            <input type="submit" value="Import timetable" />
-    </form>
-</div>
-<div id="footer">
-    Zbudim.se
-    <a href="/About">About</a>
-</div>
+        </div>
+    </main>
+
+    <footer>
+        Zbudim.se
+        <a href="./about.html">About</a>
+    </footer>
 </body>
 </html>

@@ -5,38 +5,20 @@ body {
     -o-background-size: cover;
     background-size: cover;
     font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
 
-@media only screen and (max-width: 500px) {
-    body {
-        background: rgb(0, 185, 255);
-        font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
-    }
-}
-
-nav {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-
-    z-index: 10;
-
-    width:100%;
-    height: 40px;
-    padding:10px;
-    box-sizing: border-box;
-    background-color: rgba(240, 240, 240, 0.75);
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+    margin:0;
 }
 
 .wrapper{
-    position: absolute;
-    top: 0px;
-    right: 50%;
-    transform: translate(50%, 0%);
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 50px;
     width:95%;
-    box-sizing: border-box;
+    flex: 1;
+    padding-bottom: 10px;
 }
 
 main {
@@ -45,24 +27,23 @@ main {
     border-radius: 35px;
 }
 
-.lh-1 {min-height: 48px;}
-.lh-2 {min-height: 96px;}
-.lh-3 {min-height: 144px;}
-.lh-4 {min-height: 192px;}
-.lh-5 {min-height: 240px;}
-.lh-6 {min-height: 288px;}
-.lh-7 {min-height: 336px;}
-.lh-8 {min-height: 384px;}
-.lh-9 {min-height: 432px;}
-.lh-10 {min-height: 480px;}
-.lh-11 {min-height: 528px;}
-.lh-12 {min-height: 576px;}
-.lh-13 {min-height: 624px;}
-.lh-14 {min-height: 672px;}
+.lh-1 {height: 48px;}
+.lh-2 {height: 96px;}
+.lh-3 {height: 144px;}
+.lh-4 {height: 192px;}
+.lh-5 {height: 240px;}
+.lh-6 {height: 288px;}
+.lh-7 {height: 336px;}
+.lh-8 {height: 384px;}
+.lh-9 {height: 432px;}
+.lh-10 {height: 480px;}
+.lh-11 {height: 528px;}
+.lh-12 {height: 576px;}
+.lh-13 {height: 624px;}
+.lh-14 {height: 672px;}
 
 .lecture{
     width:100%;
-    height:6%;
     box-sizing: border-box;
 
     padding:5px;
@@ -126,7 +107,20 @@ main {
 }
 
 #controls{
-    height: 50px;
+    height: 40px;
+    justify-content: flex-end;
+}
+
+#controls button {
+    height:40px;
+    width:100px;
+
+    background-color: #f1f1f1;
+    border: 1px solid #afafaf;
+}
+
+#controls button:hover{
+    background-color: #e4e4e4;
 }
 
 #timetable {
@@ -193,7 +187,6 @@ main * {
 }
 
 [class*="col-"] {
-    float: left;
     padding: 7px;
     min-width: 120px;
     box-sizing: border-box;
@@ -205,6 +198,11 @@ main * {
 
 .h100{
     height: 100%;
+}
+
+.row {
+    display:flex;
+    flex-flow: row wrap;
 }
 
 .col-1-1 {width: 11.11%;}
@@ -232,12 +230,6 @@ main * {
 .c7 { background-color: #839098;}
 .c8 { background-color: #5282E6;}
 
-.row::after {
-    content: "";
-    clear: both;
-    display: block;
-}
-
 @media only screen and (max-width: 900px) {
     [class*="col-1"] {
         width: 100%;
@@ -254,5 +246,4 @@ main * {
         width: 100%;
         margin-bottom: 20px;
     }
-
 }

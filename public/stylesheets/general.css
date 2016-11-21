@@ -1,0 +1,104 @@
+body {
+    background-color: #00B7FF;
+    font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+    margin:0;
+}
+
+main {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-wrapper {
+    margin: auto;
+    box-sizing: border-box;
+
+    background-color: rgba(255, 255, 255, 0.90);
+    padding: 15px 25px 25px 25px;
+    border-radius: 15px 40px 15px 40px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.30);
+}
+
+h1 {
+    font: 25px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-top:5px;
+}
+
+.form {
+    margin: 2px 0px 0px 10px;
+    font-size: 14px;
+}
+
+.form-group * {
+    display: block;
+    color: rgb(115, 115, 115);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+form input {
+    height: 25px;
+    width: 90%;
+    font-size: 15px;
+    padding-left: 5px;
+}
+
+form input[type="submit"]{
+    font-size: 15px;
+    font-weight: bold;
+    float: right;
+    height: 30px;
+    width: 80px;
+}
+
+form input[type="checkbox"], form input[type="radio"] {
+    float: left;
+    width: 25px;
+    margin: 0px;
+    margin-left: 5px;
+}
+
+form input[type="checkbox"] + label, form input[type="radio"] + label {
+    line-height: 25px;
+    vertical-align: middle;
+    padding-left: 35px;
+}
+
+.checkb {
+    clear: right;
+    font-weight: bold;
+}
+
+.valid-true {
+    box-shadow: 0px 0px 6px 1px #00ff00;
+    border: 1px solid #00ff00;
+}
+
+.valid-false {
+    box-shadow: 0px 0px 6px 1px #ff0000;
+    border: 1px solid #ff0000;
+}
+
+@media only screen and (min-width: 480px) {
+    body {
+        background: url("../images/background.svg") no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    .content-wrapper {
+        padding: 20px 30px 30px 30px;
+        border-radius: 15px 40px 15px 40px;
+        box-shadow: 15px 15px 5px rgba(0, 0, 0, 0.30);
+    }
+}

@@ -18,6 +18,12 @@ window.onclick = function(event) {
 }
 
 function deleteLecture(l){
-    //Send request to server
+    if(window.confirm("Are you sure you want to remove the lecture from your timetable?")){
+        //Send request to server
+        l.className = l.className.replace(/ c[0-8] /g, ' ');
 
+        while (l.firstChild) {
+            l.removeChild(l.firstChild);
+        }
+    }
 }
