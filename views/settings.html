@@ -23,7 +23,7 @@
     <main>
         <div class="content-wrapper" >
             <h1>Settings</h1>
-            <form action="" method="post" enctype="multipart/form-data"/>
+            <form action="./settings" method="post" enctype="multipart/form-data">
                 <div class="form-group form-field">
                     <label>Email:
                         <input type="email" id="Email" name="Email" value="email@sample.com" onkeypress="validateEmail(this)" title="Must be a valid email address" pattern='(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))' required/>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="form-group">
                     <label class="checkb">Choose mode of transport based on:</label>
-                    <input type="radio" name="wheather" checked="1"/>
+                    <input type="radio" name="wheather" checked="checked"/>
                     <label>Wheather</label>
                     <input type="radio" name="wheather"/>
                     <label>Manual</label>
