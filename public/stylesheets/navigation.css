@@ -13,7 +13,7 @@ nav {
     background-color: rgba(240, 240, 240, 0.75);
 }
 
-nav button {
+nav a {
     height:40px;
     width:100px;
 
@@ -24,8 +24,30 @@ nav button {
     border-left: 1px solid #aaaaaa;
 
     box-shadow: 0 -15px 15px -15px #000 inset;
+
+    line-height: 40px;
+    text-align: center;
+    color: black;
+    font-size: 15px;
 }
 
-nav button:hover {
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
     background-color: white;
 }
+
+a:active {
+    text-decoration: none;
+    color: black;
+}
+
