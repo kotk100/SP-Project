@@ -14,6 +14,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
 
 .content-wrapper {
@@ -92,7 +94,7 @@ form input[type="checkbox"] + label, form input[type="radio"] + label {
 
 @media only screen and (min-width: 480px) {
     body {
-        background: url("../images/background.svg") no-repeat center center fixed;
+        background: url("../images/back.svg") no-repeat center center fixed;
         background-size: cover;
     }
 

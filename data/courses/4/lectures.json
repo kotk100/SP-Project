@@ -1,0 +1,12 @@
+{
+  "lectures":  [
+    { "id": 1, "name":"OUI_LV", "instructor":"Martin Možina", "start":13, "duration":2, "location":"PR15", "day":0},
+    { "id": 2, "name":"OUI_LV", "instructor":"Martin Možina", "start":15, "duration":2, "location":"PR15", "day":0},
+    { "id": 3, "name":"OUI_LV", "instructor":"Martin Možina", "start":17, "duration":2, "location":"PR16", "day":1},
+    { "id": 4, "name":"OUI_LV", "instructor":"Jure Žabkar", "start":9, "duration":2, "location":"PR14", "day":2},
+    { "id": 5, "name":"OUI_P", "instructor":"Ivan Bratko", "start":11, "duration":3, "location":"PA", "day":2},
+    { "id": 6, "name":"OUI_LV", "instructor":"Jure Žabkar", "start":11, "duration":2, "location":"PR15", "day":3},
+    { "id": 7, "name":"OUI_LV", "instructor":"Jure Žabkar", "start":13, "duration":2, "location":"PR15", "day":3},
+    { "id": 8, "name":"OUI_LV", "instructor":"Martin Možina", "start":11, "duration":2, "location":"PR14", "day":4}
+  ]
+}

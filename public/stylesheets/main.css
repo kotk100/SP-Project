@@ -1,9 +1,5 @@
 body {
-    background: url("../images/background.svg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background: rgb(0, 185, 255);
     font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
 
     min-height: 100vh;
@@ -17,17 +13,44 @@ body {
     margin-right: auto;
     margin-top: 50px;
     width:95%;
+    height: 100%;
     flex: 1;
     padding-bottom: 10px;
 }
 
 main {
     background-color:#ffffff;
-    padding: 25px;
-    border-radius: 35px;
+    padding: 25px; /* same as courseSelectList */
+    border-radius: 35px; /* same as courseSelectList */
+    position: relative;
+}
+
+main * {
+    box-sizing: border-box;
+}
+
+.left-section {
+    height: 400px;
+}
+
+.left-section img{
+    display:block;
+    margin:auto;
+}
+
+.detail {
+    margin: 0px;
+    text-overflow: ellipsis;
+}
+
+.enlarge {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(0,0,0,0.8);
 }
 
 .lh-1 {height: 48px;}
+.lh-1 p:not(:first-child) {display:inline;}
 .lh-2 {height: 96px;}
 .lh-3 {height: 144px;}
 .lh-4 {height: 192px;}
@@ -45,11 +68,18 @@ main {
 .lecture{
     width:100%;
     box-sizing: border-box;
+    overflow: hidden;
 
     padding:5px;
-    margin: 1%;
+    margin: 0px;
 
     border-radius: 5px;
+    border: 2px solid white;
+}
+
+.lecture > div {
+    display: flex;
+    flex-flow: row;
 }
 
 .day{
@@ -69,9 +99,17 @@ main {
     font-weight: bold;
 }
 
+.time {
+    text-align: center;
+    font-size: 50px;
+    margin: 10px;
+}
+
 .title {
     font-weight: bold;
     font-size: 15px;
+    margin: 0px;
+    flex: 1;
 }
 
 .desc {
@@ -106,28 +144,35 @@ main {
     display:inline;
 }
 
-#controls{
+.controls{
     height: 40px;
+}
+
+.alignRight {
     justify-content: flex-end;
 }
 
-#controls button {
+.alignLeft {
+    justify-content: flex-start;
+}
+
+.controls button {
     height:40px;
-    width:100px;
+    min-width:100px;
 
     background-color: #f1f1f1;
     border: 1px solid #afafaf;
 }
 
-#controls button:hover{
+.controls button:hover{
     background-color: #e4e4e4;
 }
 
-#timetable {
+.timetable {
     height: calc(100% - 50px);
 }
 
-/* dropdown */
+/* dropdown ----------------------------------------------------------------------------- */
 .dropbtn {
     height: 16px;
     width:16px;
@@ -180,16 +225,74 @@ button::-moz-focus-inner {
 .dropdown a:hover {background-color: #f1f1f1}
 
 .show {display:block;}
- /* dropdown end*/
+ /* dropdown end ------------------------------------------------------------------------ */
 
-main * {
-    box-sizing: border-box;
+/* List search -------------------------------------------------------------------------- */
+#courseSelect {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+
+    padding: 25px; /* Same as main */
+    border-radius: 35px; /* Same as main */
+
+    display:none;
+    width: 100%;
 }
+
+#courseSelect label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.w_back {
+    background-color: rgb(255,255,255);
+}
+
+#courseTimetable {
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 5px;
+}
+
+#courseSelectList {
+    max-height: 300px;
+    max-width: 300px;
+    overflow: auto;
+
+    list-style-type: none;
+    background-color: white;
+
+    padding: 0px;
+    margin: 0px;
+}
+
+#courseSelectList li {
+    min-height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+#courseSelectList li + li {
+    padding-left: 5px;
+    border-bottom: 1px solid #c2c2c2;
+
+}
+
+#courseSelectList li:hover {
+    background-color: #dcdcdc;
+}
+
+#courseSelectList input {
+    height: 100%;
+    width: 100%;
+}
+
+/* List search end ---------------------------------------------------------------------- */
 
 [class*="col-"] {
     padding: 7px;
-    min-width: 120px;
-    box-sizing: border-box;
+    min-width: 145px;
 }
 
 [class*="col-2"] {
@@ -205,21 +308,29 @@ main * {
     flex-flow: row wrap;
 }
 
-.col-1-1 {width: 11.11%;}
-.col-1-2 {width: 22.22%;}
-.col-1-3 {width: 33.33%;}
-.col-1-4 {width: 44.44%;}
-.col-1-5 {width: 55.55%;}
-.col-1-6 {width: 66.66%;}
-.col-1-7 {width: 77.77%;}
-.col-1-8 {width: 88.88%;}
-.col-1-9 {width: 100%;}
+[class*="col-1"] {
+    width: 100%;
+}
 
-.col-2-1 {width: 20%;}
-.col-2-2 {width: 40%;}
-.col-2-3 {width: 60%;}
-.col-2-4 {width: 80%;}
-.col-2-5 {width: 100%;}
+[class*="col-2"] {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Animation ---------------------------------------------------------------------------- */
+
+#courseTimetable > div > div:not(:first-child) {
+    animation-name: fadeAnimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fadeAnimation {
+    0%   { opacity: 1; }
+    50%  { opacity: 0; }
+    100% { opacity: 1; }
+}
+/* Animation end ------------------------------------------------------------------------ */
 
 .c1 { background-color: #933BCF;}
 .c2 { background-color: #F15F76;}
@@ -230,20 +341,42 @@ main * {
 .c7 { background-color: #839098;}
 .c8 { background-color: #5282E6;}
 
-@media only screen and (max-width: 900px) {
-    [class*="col-1"] {
-        width: 100%;
+@media only screen and (min-width: 900px) {
+    .col-1-1 {width: 11.11%;}
+    .col-1-2 {width: 22.22%;}
+    .col-1-3 {width: 33.33%;}
+    .col-1-4 {width: 44.44%;}
+    .col-1-5 {width: 55.55%;}
+    .col-1-6 {width: 66.66%;}
+    .col-1-7 {width: 77.77%;}
+    .col-1-8 {width: 88.88%;}
+    .col-1-9 {width: 100%;}
+
+    .left-section {
+        height: 100%;
     }
 }
 
-@media only screen and (max-width: 600px) {
-    body {
-        background: rgb(0, 185, 255);
-        font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+@media only screen and (min-width: 768px) {
+    #courseTimetable > div > div:not(:first-child) {
+        animation-name: none;
     }
 
-    [class*="col-2"] {
-        width: 100%;
-        margin-bottom: 20px;
+    #courseTimetable > div > div:hover {
+        opacity: 0;
+        transition: opacity 1s;
     }
+}
+
+@media only screen and (min-width: 600px) {
+    body {
+        background: url("../images/back.svg") no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    .col-2-1 {width: 20%;}
+    .col-2-2 {width: 40%;}
+    .col-2-3 {width: 60%;}
+    .col-2-4 {width: 80%;}
+    .col-2-5 {width: 100%;}
 }

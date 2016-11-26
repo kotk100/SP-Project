@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Zbudim se</title>
-
-    <link rel='stylesheet' href='../public/stylesheets/footer.css' />
-    <link rel='stylesheet' href='../public/stylesheets/settings.css' />
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='/public/stylesheets/login.css' />
+    <link rel='stylesheet' href='/public/stylesheets/footer.css' />
+    <link rel='stylesheet' href='/public/stylesheets/general.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-<div class="center" >
-    <p class="title">Registration</p>
-    <form action="" method="post" enctype="multipart/form-data">
-        <div>
-            <b>Email or Username:</b>
-            <input type="email" id="Email" name="Email" value="email" />
-        </div>
-        <input type="submit" value="Recover password" />
-    </form>
-</div>
-<div id="footer">
-    <p>Zbudim.se</p>
-    <a href="/About">About</a>
-</div>
+<main>
+    <div class="content-wrapper">
+        <h1>Account recovery</h1>
+        <p class="form-group">If a user with the specified username or email exsists, you will recieve an email with the details on how to recover your account.</p>
+        <form action="./login.html" method="get">
+            <div class="form form-group">
+                <label>Username or email
+                    <input type="text" name="username" required/>
+                </label>
+            </div>
+            <input type="submit" value="Recover"/>
+        </form>
+    </div>
+</main>
+<footer>
+    <a href="/">Zbudim.se</a>
+    <a href="/about.html">About</a>
+</footer>
 </body>
 </html>
