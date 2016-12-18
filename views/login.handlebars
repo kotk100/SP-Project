@@ -1,0 +1,25 @@
+<main>
+    <div class="content-wrapper">
+        <h1>Login</h1>
+        {{#if message}}
+            <p class="red">{{ message }}</p>
+        {{/if}}
+        <form action="login" method="post">
+            <div class="form form-group">
+                <label>Username or email
+                    <input type="text" name="username" required/>
+                </label>
+            </div>
+            <div class="form form-group">
+                <label>Password
+                    <input type="password" name="password" required/>
+                </label>
+            </div>
+
+            <input type="submit" value="Login"/>
+        </form>
+        <div class="form">
+            <a href="/register">Register here</a>
+        </div>
+    </div>
+</main>

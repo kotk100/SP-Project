@@ -1,0 +1,27 @@
+{
+  "development": {
+    "username": "root",
+    "password": "eating1895",
+    "database": "wakemeup",
+    "host": "127.0.0.1",
+    "dialect": "mariadb",
+    "logging": true,
+    "define": {
+    "timestamps": false
+    }
+  },
+  "test": {
+    "dialect": "mariadb",
+    "storage": ":memory:"
+  },
+  "production": {
+    "username": "root",
+    "password": "eating1895",
+    "database": "wakemeup",
+    "host": "127.0.0.1",
+    "dialect": "mariadb",
+    "define": {
+      "timestamps": false
+    }
+  }
+}

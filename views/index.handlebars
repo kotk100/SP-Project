@@ -1,0 +1,85 @@
+<div class="wrapper">
+    <main>
+        <div class="row h100">
+            <div class="col-1-2 left-section">
+                <div>
+                    <p>Time to wake up:</p>
+                    <p class="time">8:00</p>
+                </div>
+                <hr>
+                <div>
+                    <p>Time to leave:</p>
+                    <p class="time">8:00</p>
+                </div>
+                <hr>
+                <div>
+                    <p>Current mode of transportation:</p>
+                    <img src="/images/bike.png" alt="bicycle" height="83" width="128" />
+                </div>
+                <hr>
+            </div>
+            <div class="col-1-7">
+                <div class="row controls alignRight">
+                    <button id="newLecture">Add new lecture</button>
+                </div>
+                <div class="row timetable">
+                    {{#timetable data}}
+                        <div class="lecture c{{ color }} lh-{{ Lecture.duration }}" data-lecture="{{ Lecture.idLecture }}" data-subject="{{ Lecture.idSubject }}">
+                            <div>
+                                <p class="title alignLeft">{{ Lecture.Subject.subjectName }}</p>
+                                <div class="dropdown alignRight">
+                                    <button class="dropbtn showDrop">&#x25BC;</button>
+                                    <div class="dropdown-content">
+                                        <a class="removeMenu">Remove course</a>
+                                        <a class="replace">Replace lecture</a>
+                                        <a class="exchange">Ask for exchange</a>
+                                    </div>
+                                </div>
+                                <button class="del remove alignRight">X</button>
+                            </div>
+                            <p class="detail enlarge">{{ Lecture.startTime }} {{ Lecture.location }}</p>
+                            <p class="detail">{{ Lecture.Lecturer.lecturerName }}</p>
+                        </div>
+                    {{/timetable}}
+                </div>
+            </div>
+        </div>
+        <div id="courseSelect" class="row h100">
+            <div class="col-1-2 w_back left-section">
+                <div id="searchCon">
+                    <label> Please select a course: </label><br>
+                    <input type="text" placeholder="Search courses..." id="search" onkeyup="searchCousrses(this);"/>
+                </div>
+                <ul id="courseSelectList">
+                </ul>
+            </div>
+            <div class="col-1-7">
+                <div class="row controls w_back">
+                    <label> Then select a lecture: </label>
+                </div>
+                <div class="row timetable" id="courseTimetable">
+                    <div class="col-2-1">
+                        <div class="day">Mon</div>
+                        <div class="lecture lh-14"></div>
+                    </div>
+                    <div class="col-2-1">
+                        <div class="day">Tue</div>
+                        <div class="lecture lh-14"></div>
+                    </div>
+                    <div class="col-2-1">
+                        <div class="day">Wed</div>
+                        <div class="lecture lh-14"></div>
+                    </div>
+                    <div class="col-2-1">
+                        <div class="day">Thu</div>
+                        <div class="lecture lh-14"></div>
+                    </div>
+                    <div class="col-2-1">
+                        <div class="day">Fri</div>
+                        <div class="lecture lh-14"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
