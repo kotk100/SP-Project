@@ -17,6 +17,8 @@ var lecture = require('./routes/lecture');
 
 var app = express();
 
+require('./routes/getTimetable').getData();
+
 //Configure i18n
 i18n.configure({
     locales:['en', 'sl'],
