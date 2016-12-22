@@ -5,8 +5,8 @@ var path      = require("path");
 var Sequelize = require("sequelize");
 var env       = process.env.NODE_ENV || "development";
 var config    = require(path.join(__dirname, '..', 'config', 'config.json'))[env];
-if (process.env.DATABASE_URL) {
-  var sequelize = new Sequelize(process.env.DATABASE_URL);
+if (process.env.JAWSDB_MARIA_URL) {
+  var sequelize = new Sequelize(process.env.JAWSDB_MARIA_URL);
 } else {
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
@@ -27,6 +27,8 @@ Object.keys(db).forEach(function(modelName) {
     db[modelName].associate(db);
   }
 });
+
+sequelize.sync({ logging: console.log });
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
