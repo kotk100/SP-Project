@@ -39,6 +39,7 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         User.hasMany(models.Timetable, { as: 'Timetable', foreignKey: 'idUser'});
         User.hasOne(models.Setting, {as: 'Settings', foreignKey: 'idUser'});
+        User.hasOne(models.Verification, {as: 'Verification', foreignKey: 'idUser'});
       }
     }
   });
