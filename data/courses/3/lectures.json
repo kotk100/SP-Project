@@ -1,7 +1,0 @@
-{
-  "lectures":  [
-    { "id": 1, "name":"MRO_LV", "instructor":"Mattia Petroni", "start":11, "duration":2, "location":"PR07", "day":2},
-    { "id": 2, "name":"MRO_LV", "instructor":"Mattia Petroni", "start":11, "duration":2, "location":"PR10", "day":3},
-    { "id": 3, "name":"MRO_P", "instructor":"Miha Mraz", "start":8, "duration":3, "location":"P02", "day":4}
-  ]
-}

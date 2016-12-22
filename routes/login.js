@@ -6,7 +6,7 @@ var router  = express.Router();
 
 //Display login page
 router.get('/', function(req, res){
-    res.render('login', {layout: 'footer', cssFile: 'login', message: req.session.message});
+    res.render('login', {layout: 'footer', cssFile: 'login', message: req.session.message, lang: req.locale});
     req.session.message = null;
 });
 
@@ -17,14 +17,14 @@ router.post('/',  function(req, res, next) {
     passport.authenticate('local', function(err, user, info) {
         if (err) { return next(err); }
         if (!user) {
-            req.session.message = 'Invalid username or password.';
-            return res.redirect('/login');
+            req.session.message = req.__('invUser');
+            return res.redirect('/' + req.locale +'/login');
         }
 
         // req / res held in closure
         req.logIn(user, function(err) {
             if (err) { return next(err); }
-            return res.redirect('/');
+            return res.redirect('/' + req.locale);
         });
 
     })(req, res, next);
@@ -34,7 +34,7 @@ router.post('/',  function(req, res, next) {
 //logout user
 router.get('/logout', function(req, res){
     req.logOut();
-    res.redirect('/login');
+    res.redirect('/' + req.locale + '/login');
 });
 
 module.exports = router;

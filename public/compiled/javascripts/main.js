@@ -208,8 +208,8 @@ function doReplace(event){
 }
 
 function doRemove(event){
-    promptDelete();
-    deleteLecture(event.target.parentElement.parentElement);
+    if(window.confirm("Are you sure you want to remove the lecture from your timetable?"))
+        deleteLecture(event.target.parentElement.parentElement);
 }
 
 function doRemoveMenu(event){

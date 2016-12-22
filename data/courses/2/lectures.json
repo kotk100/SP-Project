@@ -1,8 +1,0 @@
-{
-  "lectures":  [
-    { "id": 1, "name":"PS_P", "instructor":"Uros lotric", "start":11, "duration":3, "location":"P21", "day":1},
-    { "id": 2, "name":"PS_LV", "instructor":"Davor Sluga", "start":15, "duration":2, "location":"PR08", "day":1},
-    { "id": 3, "name":"PS_LV", "instructor":"Davor Sluga", "start":17, "duration":2, "location":"PR08", "day":2},
-    { "id": 4, "name":"PS_LV", "instructor":"Davor Sluga", "start":11, "duration":2, "location":"PR11", "day":3}
-  ]
-}

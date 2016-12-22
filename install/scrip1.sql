@@ -67,6 +67,15 @@ ADD PRIMARY KEY (`idUser`, `idLecture`);
 ALTER TABLE `wakemeup`.`timetable` 
 ADD COLUMN `idLectureExchange` INT(11) NULL AFTER `idLecture`;
 
+ALTER TABLE `wakemeup`.`settings` 
+CHANGE COLUMN `CarSelected` `CarSelected` TINYINT(1) NULL DEFAULT NULL ,
+CHANGE COLUMN `BusSelected` `BusSelected` TINYINT(1) NULL DEFAULT NULL ,
+CHANGE COLUMN `BicycleSelected` `BicycleSelected` TINYINT(1) NULL DEFAULT NULL ,
+CHANGE COLUMN `PedSelected` `PedSelected` TINYINT(1) NULL DEFAULT NULL ,
+CHANGE COLUMN `Address` `Address` VARCHAR(45) NULL DEFAULT NULL ,
+CHANGE COLUMN `PreparationTime` `PreparationTime` DOUBLE NULL DEFAULT NULL ;
+
+
 
 
 

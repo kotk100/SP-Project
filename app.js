@@ -5,12 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
-var handlebars  = require('./config/handlebars')(exphbs);
 var passport = require('./config/passport');
+var i18n = require("i18n");
 
 var index = require('./routes/index');
 var about = require('./routes/about');
-var users = require('./routes/users');
 var register = require('./routes/register');
 var login = require('./routes/login');
 var settings = require('./routes/settings');
@@ -20,7 +19,19 @@ var lecture = require('./routes/lecture');
 
 var app = express();
 
+//Configure i18n
+i18n.configure({
+    locales:['en', 'sl'],
+    directory: __dirname + '/locales',
+    defaultLocale: 'en',
+    syncFiles: true
+});
+
+app.use(i18n.init);
+
 //set view engine
+var handlebars  = require('./config/handlebars')(exphbs, i18n);
+
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
@@ -44,6 +55,16 @@ app.use(require('node-sass-middleware')({
 }));
 app.use(express.static(path.join(__dirname, 'public/compiled')));
 
+//Force language if specified
+app.use(function(req, res, next){
+    var match = req.url.match(/^\/(en|sl)([\/\?].*)?$/i);
+    if (match){
+        req.setLocale(match[1]);
+        req.url = match[2] || '/';
+    }
+    next();
+});
+
 app.use('/register', register);
 app.use('/login', login);
 app.use('/about', about);
@@ -53,11 +74,12 @@ app.get('/message', function(req, res){
     req.session.message = null;
 });
 
+
 app.get('/*', function(req, res){
     if(req.user)
         return req.next();
     else
-        return res.redirect('/login');
+        return res.redirect('/' + req.locale + '/login');
 });
 
 app.use('/lecture', lecture);

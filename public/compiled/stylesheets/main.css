@@ -10,9 +10,22 @@ footer {
   footer * {
     text-align: center;
     vertical-align: middle;
-    line-height: 40px; }
-  footer a {
-    margin-left: 30%; }
+    line-height: 40px;
+    text-decoration: none;
+    color: black; }
+  footer > * {
+    margin-left: 20%;
+    display: inline; }
+  footer > div > a {
+    border: 1px #878787 solid;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+    line-height: 20px; }
+  footer > div > a:hover {
+    background-color: white; }
 
 .red {
   color: red;

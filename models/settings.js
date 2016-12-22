@@ -15,32 +15,32 @@ module.exports = function(sequelize, DataTypes) {
     },
     carSelected: {
       type: DataTypes.INTEGER(1),
-      allowNull: false,
+      allowNull: true,
       field: 'CarSelected'
     },
     busSelected: {
       type: DataTypes.INTEGER(1),
-      allowNull: false,
+      allowNull: true,
       field: 'BusSelected'
     },
     bicycleSelected: {
       type: DataTypes.INTEGER(1),
-      allowNull: false,
+      allowNull: true,
       field: 'BicycleSelected'
     },
     pedSelected: {
       type: DataTypes.INTEGER(1),
-      allowNull: false,
+      allowNull: true,
       field: 'PedSelected'
     },
     address: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       field: 'Address'
     },
     preparationTime: {
       type: "DOUBLE",
-      allowNull: false,
+      allowNull: true,
       field: 'PreparationTime'
     },
     studentId: {

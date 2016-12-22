@@ -1,5 +1,5 @@
 var osmosis = require('osmosis');
-var models = require('../models');
+var models = require('../models/index');
 var logger = require('../config/logger');
 
 var getDayId = function(str){
@@ -30,7 +30,8 @@ var saveCourse = function(course){
     }).then(function (lecturer, created) {
         models.Subject.findOrCreate({
             where: {
-                longName: course.longName
+                longName: course.longName,
+                idSubject: course.courseId
             },
             defaults: {
                 idSubject: course.courseId,

@@ -1,5 +1,5 @@
 var osmosis = require('osmosis');
-var models = require('../models');
+var models = require('../models/index');
 var logger = require('../config/logger');
 
 var getDayId = function(str){

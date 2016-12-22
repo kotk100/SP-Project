@@ -1,6 +1,6 @@
 var days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 
-function hbsHelpers(hbs) {
+function hbsHelpers(hbs, i18n) {
     return hbs.create({
         defaultLayout: 'main',
         helpers: { // This was missing
@@ -40,6 +40,20 @@ function hbsHelpers(hbs) {
                     return ret;
                 }
                 return '';
+            },
+            switch: function(value, options) {
+                        this._switch_value_ = value;
+                        var html = options.fn(this); // Process the body of the switch block
+                        delete this._switch_value_;
+                        return html;
+            },
+            case: function(value, options) {
+                if (value == this._switch_value_) {
+                    return options.fn(this);
+                }
+            },
+            __: function(){
+                return i18n.__.apply(this, arguments);
             }
         }
     });

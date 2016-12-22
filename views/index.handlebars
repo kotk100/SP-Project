@@ -2,25 +2,36 @@
     <main>
         <div class="row h100">
             <div class="col-1-2 left-section">
-                <div>
-                    <p>Time to wake up:</p>
-                    <p class="time">8:00</p>
-                </div>
-                <hr>
-                <div>
-                    <p>Time to leave:</p>
-                    <p class="time">8:00</p>
-                </div>
-                <hr>
-                <div>
-                    <p>Current mode of transportation:</p>
-                    <img src="/images/bike.png" alt="bicycle" height="83" width="128" />
-                </div>
+                {{#if message}}
+                    <div>
+                        <p class="red">{{message}}</p>
+                    </div>
+                {{else}}
+                    <div>
+                        <p>{{__ 'wakeTime'}}</p>
+                        <p class="time">{{ wake }}</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <p>{{__ 'leaveTime'}}</p>
+                        <p class="time">{{ leave }}</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <p>Current mode of transportation:</p>
+                        {{#switch transport}}
+                            {{#case "bicycling" }}<img src="/images/bike.png" alt="bicycle" height="83" />{{/case}}
+                            {{#case "driving" }}<img src="/images/car.svg" alt="car" height="83" />{{/case}}
+                            {{#case "transit" }}<img src="/images/bus.svg" alt="bus" height="83" />{{/case}}
+                            {{#case "walking" }}<img src="/images/walk.png" alt="walking" height="83" />{{/case}}
+                        {{/switch}}
+                    </div>
+                {{/if}}
                 <hr>
             </div>
             <div class="col-1-7">
                 <div class="row controls alignRight">
-                    <button id="newLecture">Add new lecture</button>
+                    <button id="newLecture">{{__ 'newLecture'}}</button>
                 </div>
                 <div class="row timetable">
                     {{#timetable data}}
@@ -30,9 +41,9 @@
                                 <div class="dropdown alignRight">
                                     <button class="dropbtn showDrop">&#x25BC;</button>
                                     <div class="dropdown-content">
-                                        <a class="removeMenu">Remove course</a>
-                                        <a class="replace">Replace lecture</a>
-                                        <a class="exchange">Ask for exchange</a>
+                                        <a class="removeMenu">{{__ 'removeLecture'}}</a>
+                                        <a class="replace">{{__ 'replaceLecture'}}</a>
+                                        <a class="exchange">{{__ 'askExchange'}}</a>
                                     </div>
                                 </div>
                                 <button class="del remove alignRight">X</button>
@@ -47,7 +58,7 @@
         <div id="courseSelect" class="row h100">
             <div class="col-1-2 w_back left-section">
                 <div id="searchCon">
-                    <label> Please select a course: </label><br>
+                    <label>{{__ 'selectCourse'}}</label><br>
                     <input type="text" placeholder="Search courses..." id="search" onkeyup="searchCousrses(this);"/>
                 </div>
                 <ul id="courseSelectList">
@@ -55,27 +66,27 @@
             </div>
             <div class="col-1-7">
                 <div class="row controls w_back">
-                    <label> Then select a lecture: </label>
+                    <label>{{__ 'selectLecture'}}</label>
                 </div>
                 <div class="row timetable" id="courseTimetable">
                     <div class="col-2-1">
-                        <div class="day">Mon</div>
+                        <div class="day">{{__ 'Mon'}}</div>
                         <div class="lecture lh-14"></div>
                     </div>
                     <div class="col-2-1">
-                        <div class="day">Tue</div>
+                        <div class="day">{{__ 'Tue'}}</div>
                         <div class="lecture lh-14"></div>
                     </div>
                     <div class="col-2-1">
-                        <div class="day">Wed</div>
+                        <div class="day">{{__ 'Wed'}}</div>
                         <div class="lecture lh-14"></div>
                     </div>
                     <div class="col-2-1">
-                        <div class="day">Thu</div>
+                        <div class="day">{{__ 'Thu'}}</div>
                         <div class="lecture lh-14"></div>
                     </div>
                     <div class="col-2-1">
-                        <div class="day">Fri</div>
+                        <div class="day">{{__ 'Fri'}}</div>
                         <div class="lecture lh-14"></div>
                     </div>
                 </div>

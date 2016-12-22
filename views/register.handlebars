@@ -1,35 +1,35 @@
 <main>
     <div class="content-wrapper" >
-        <h1>Registration</h1>
+        <h1>{{__ 'registration'}}</h1>
         {{#if message}}
             <p class="red">{{ message }}</p>
         {{/if}}
         <form action="register" method="post">
             <div class="form form-group">
-                <label>Username:
+                <label>{{__ 'username'}}:
                     <input type="text" id="username" name="username" pattern="(?=.{4,20}$)[a-zA-Z0-9]+([-_\.][a-zA-Z0-9]+)*[a-zA-Z0-9]" title="Must be between 4 and 20 characters long, no special characters except . _ and -" required/>
                 </label>
             </div>
             <div class="form form-group">
-                <label>Email:
+                <label>{{__ 'email'}}:
                     <input type="email" id="Email" name="email" title="Must be a valid email address" pattern='(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))' required>
                 </label>
             </div>
             <div class="form form-group">
-                <label>Password:
+                <label>{{__ 'password'}}:
                     <input id="password" type="password" name="password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" title="Between 8 and 50 characters long with at least 1 Alphabet and 1 Number" required>
                 </label>
             </div>
             <div class="form form-group">
-                <label>Confirm password:
+                <label>{{__ 'confPassword'}}:
                     <input id="passwordc" type="password" name="password" required>
                 </label>
             </div>
             <div class="form form-group">
                 <input id="terms" name="terms" type="checkbox" value="0" required/>
-                <label>I Agree To The Terms & Conditions</label>
+                <label>{{__ 'termsCond'}}</label>
             </div>
-            <input id="submitDis" disabled type="submit" value="Register" />
+            <input id="submitDis" disabled type="submit" value="{{__ 'register'}}" />
         </form>
     </div>
 </main>

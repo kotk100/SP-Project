@@ -22,14 +22,19 @@ passport.use(new Strategy(
             }
         }).then(function(user){
             //Check password
-            bcrypt.compare(password, user.password).then(function(res) {
-                if(!res) {
-                    logger.debug('User login failed.');
-                    return cb(null, false);
-                } else //return user
-                    logger.debug('User login successful.');
+            if(user) {
+                bcrypt.compare(password, user.password).then(function (res) {
+                    if (!res) {
+                        logger.debug('User login failed.');
+                        return cb(null, false);
+                    } else //return user
+                        logger.debug('User login successful.');
                     return cb(null, user.idUser);
-            });
+                });
+            } else {
+                logger.debug('User login failed.');
+                return cb(null, false);
+            }
         }, function(err){
             logger.error('Error reading user!', err);
             return cb(err);

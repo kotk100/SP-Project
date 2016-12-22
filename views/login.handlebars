@@ -1,17 +1,17 @@
 <main>
     <div class="content-wrapper">
-        <h1>Login</h1>
+        <h1>{{__ 'login'}}</h1>
         {{#if message}}
             <p class="red">{{ message }}</p>
         {{/if}}
         <form action="login" method="post">
             <div class="form form-group">
-                <label>Username or email
+                <label>{{__ 'username'}}
                     <input type="text" name="username" required/>
                 </label>
             </div>
             <div class="form form-group">
-                <label>Password
+                <label>{{__ 'password'}}
                     <input type="password" name="password" required/>
                 </label>
             </div>
@@ -19,7 +19,7 @@
             <input type="submit" value="Login"/>
         </form>
         <div class="form">
-            <a href="/register">Register here</a>
+            <a href="/{{ lang }}/register">{{__ 'regLink'}}</a>
         </div>
     </div>
 </main>

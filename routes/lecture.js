@@ -109,56 +109,50 @@ var sendExchangeEmails = function(user1, idLecture1, user2, idLecture2){
     }, function(err){
         logger.error('Fetching lectures failed', err);
     });
-    //get lectures with subjects
-    //get users
-    //send email
 };
 
 //Make an exchange
 router.post('/exchange/:idL1/:idL2', function(req, res){
-    models.Timetable.findOne({
-        where: {
-            idLecture: req.params.idL1,
-            idLectureExchange: req.params.idL2
-        }
-    }).then(function(timetable){
-        if(timetable){
-            timetable.update({
-                idLectureExchange: null
-            }).then(function(ok){
-                sendExchangeEmails(timetable.idUser, req.params.idL1, req.user, req.params.idL2);
-                res.status(200);
-                res.send('Done');
-            }, function(err){
-                logger.error('Timetable update failed', err);
-                res.status(500);
-                res.send('Failed');
-            });
-        } else {
-            models.Timetable.findOne({
-                where: {
-                    idUser: req.user,
-                    idLecture: req.params.idL2
-                }
-            }).then(function(timetable){
-                timetable.update({
-                    idLectureExchange: req.params.idL1
-                }).then(function(ok){
-                    res.status(200);
-                    res.send('Done');
+    return models.sequelize.transaction(function(t){
+        return models.Timetable.findOne({
+            where: {
+                idLecture: req.params.idL1,
+                idLectureExchange: req.params.idL2
+            }
+        }, {transaction: t}).then(function(timetable){
+            //exchange found, send emails
+            if(timetable){
+                return timetable.update({
+                    idLectureExchange: null
+                }, {transaction: t}).then(function(ok){
+                    return sendExchangeEmails(timetable.idUser, req.params.idL1, req.user, req.params.idL2);
                 }, function(err){
-                    logger.error('Timetable update failed', err);
-                    res.status(500);
-                    res.send('Failed');
+                    logger.error('Timetable update failed', { err: err, idLecture: req.params.idL1, idLecture2: req.params.idL2});
                 });
-            }, function(err){
-                logger.error('Fetching timetable failed', err);
-                res.status(500);
-                res.send('Failed');
-            });
-        }
+            } else {
+                return models.Timetable.findOne({
+                    where: {
+                        idUser: req.user,
+                        idLecture: req.params.idL2
+                    }
+                }, {transaction: t}).then(function(timetable){
+                    return timetable.update({
+                        idLectureExchange: req.params.idL1
+                    }, {transaction: t}).then(function(ok){
+                    }, function(err){
+                        logger.error('Timetable update failed', {err: err, idUser: req.user });
+                    });
+                }, function(err){
+                    logger.error('Fetching timetable failed', err);
+                });
+            }
+        }, function(err){
+            logger.error('Fetching exchange failed', err);
+        });
+    }).then(function(ok){
+        res.status(200);
+        res.send('Done');
     }, function(err){
-        logger.error('Fetching exchange failed', err);
         res.status(500);
         res.send('Failed');
     });

@@ -9,13 +9,13 @@
 </head>
     <body>
         <nav>
-            <a href="/login/logout">Logout</a>
-            <a href="/settings">Settings</a>
+            <a href="/{{lang}}/login/logout">{{__ 'logout'}}</a>
+            {{#if settingsSite}}<a href="/{{ lang }}">{{__ 'home'}}</a>{{else}}<a href="/{{ lang }}/settings">{{__ 'settings'}}</a>{{/if}}
         </nav>
         {{{ body }}}
         <footer>
-            <a href="/">Zbudim.se</a>
-            <a href="/about">About</a>
+            <a href="/{{lang}}">Zbudim.se</a>
+            <a href="/{{ lang }}/about">{{__ 'about'}}</a>
         </footer>
 </body>
 </html>

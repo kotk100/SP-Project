@@ -1,55 +1,51 @@
 <main>
     <div class="content-wrapper" >
-        <h1>Settings</h1>
+        <h1>{{__ 'settings'}}</h1>
+        {{#if message}}
+            <p class="red">{{ message }}</p>
+        {{/if}}
         <form action="settings" method="post">
             <div class="form-group form-field">
-                <label>Email:
-                    <input type="email" id="Email" name="Email" placeholder="email@sample.com" title="Must be a valid email address" pattern='(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))' required/>
+                <label>{{__ 'email'}}:
+                    <input type="email" id="email" name="email" value="{{ user.email }}" title="Must be a valid email address" pattern='(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))' required/>
                 </label>
             </div>
             <div class="form-group form-field">
-                <label>Password:
+                <label>{{__ 'password'}}:
                     <input id="password" type="password" name="password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" title="Between 8 and 50 characters long with at least 1 Alphabet and 1 Number">
                 </label>
             </div>
             <div class="form-group form-field">
-                <label>Home address:
-                    <input type="text" id="Address" name="Address" placeholder="Home address" required/>
+                <label>{{__ 'address'}}:
+                    <input type="text" id="address" name="address" value="{{ user.Settings.address }}" required/>
                 </label>
             </div>
             <div class="form-group">
-                <label class="checkb">Avaible modes of transportation:</label>
-                <input type="checkbox" name="vehicle1" value="0"/>
+                <label class="checkb">{{__ 'avaibleTransport'}}:</label>
+                <input type="checkbox" name="vehicle1" {{#if user.Settings.carSelected}}checked="checked"{{/if}}/>
                 <label>Avto</label>
-                <input type="checkbox" name="vehicle2" value="0"/>
+                <input type="checkbox" name="vehicle2" {{#if user.Settings.busSelected}}checked="checked"{{/if}}/>
                 <label>Avtobus</label>
-                <input type="checkbox" name="vehicle3" value="0"/>
+                <input type="checkbox" name="vehicle3" {{#if user.Settings.bicycleSelected}}checked="checked"{{/if}}/>
                 <label>Kolo</label>
-                <input type="checkbox" name="vehicle4" value="0"/>
+                <input type="checkbox" name="vehicle4" {{#if user.Settings.pedSelected}}checked="checked"{{/if}}/>
                 <label>Hoja</label>
             </div>
-            <div class="form-group">
-                <label class="checkb">Choose mode of transport based on:</label>
-                <input type="radio" name="wheather" checked="checked"/>
-                <label>Wheather</label>
-                <input type="radio" name="wheather"/>
-                <label>Manual</label>
-            </div>
             <div class="form-group form-field">
-                <label>Time needed for preparation after waking up:
-                    <input type="number" id="time" name="time" value="20" min="0" required/>
+                <label>{{__ 'prepTime'}}:
+                    <input type="number" id="time" name="time" value="{{ user.Settings.preparationTime }}" min="0" required/>
                 </label>
             </div>
-            <input type="submit" value="Save" />
+            <input type="submit" value="{{__ 'save'}}" />
         </form>
         <hr>
-        <form>
+        <form action="settings/import" method="post">
             <div class="form-group form-field">
-                <label>Student ID:
+                <label>{{__ 'studentId'}}:
                     <input type="text" id="StudentId" name="StudentId" value="0" title="8 digit number" pattern="63[0-9][0-9][0-9][0-9][0-9][0-9]" required/>
                 </label>
             </div>
-            <input id="timeSubmit" type="submit" value="Import timetable" />
+            <input id="timeSubmit" type="submit" value="{{__ 'import'}}" />
         </form>
 
     </div>
