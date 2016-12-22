@@ -30,6 +30,8 @@ Object.keys(db).forEach(function(modelName) {
 
 sequelize.sync();
 
+require('../routes/getTimetable').getData();
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

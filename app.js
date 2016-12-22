@@ -15,8 +15,6 @@ var login = require('./routes/login');
 var settings = require('./routes/settings');
 var lecture = require('./routes/lecture');
 
-//require('./data/getTimetable').getData();
-
 var app = express();
 
 //Configure i18n
