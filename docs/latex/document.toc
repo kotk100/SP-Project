@@ -1,0 +1,5 @@
+\select@language {slovene}
+\contentsline {section}{\numberline {1}Registracija}{1}{section.1}
+\contentsline {section}{\numberline {2}Prijava in nastavitve}{2}{section.2}
+\contentsline {section}{\numberline {3}Dodajanje, odstranjevanje in menjava predavanj}{2}{section.3}
+\contentsline {section}{\numberline {4}\v Cas bujenja in odhoda}{3}{section.4}
