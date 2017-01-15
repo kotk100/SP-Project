@@ -1,0 +1,7 @@
+Statiène datoteke servira nginx
+Uporaba gzip
+Optimizacija velikosti slik
+Minifikacija css datotek
+Minifikacija javascript datotek
+Caching generiranih pogledov template engina
+caching na strani nginx-a

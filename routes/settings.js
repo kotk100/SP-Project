@@ -3,7 +3,7 @@ var logger = require('../config/logger.js');
 var express = require('express');
 var router  = express.Router();
 var ttLoader = require('./getTimetableById');
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 var sequelize = require("sequelize");
 
 router.get('/', function(req, res){
@@ -17,14 +17,15 @@ router.get('/', function(req, res){
         }]
     }).then(function(user){
         if(user) {
+            var mess = req.session.message;
+            req.session.message = null;
             return res.render('settings', {
                 cssFile: 'settings',
                 user: user,
-                message: req.session.message,
+                message: mess,
                 settingsSite: true,
                 lang: req.locale
             });
-            req.session.message = null;
         } else {
             logger.error('Did not find user!');
             return res.redirect('/' + req.locale + '/');
@@ -105,6 +106,7 @@ router.post('/import', function(req, res){
         req.session.error = false;
         return res.redirect('/' + req.locale + '/message');
     }
+    req.session.error = true;
     req.session.message = req.__('invStId');
     return res.redirect('/' + req.locale + '/settings');
 });

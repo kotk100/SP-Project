@@ -17,7 +17,7 @@ var lecture = require('./routes/lecture');
 
 var app = express();
 
-require('./routes/getTimetable').getData();
+//require('./routes/getTimetable').getData();
 
 //Configure i18n
 i18n.configure({
@@ -44,16 +44,14 @@ app.use(cookieParser());
 app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(require('node-sass-middleware')({
+/*app.use(require('node-sass-middleware')({
   src: path.join(__dirname, '/public/source'),
   dest: path.join(__dirname, '/public/compiled'),
   indentedSyntax: true,
   sourceMap: true,
-  force: true,
-  response: false,
-  debug: true
-}));
-app.use(express.static(path.join(__dirname, 'public/compiled')));
+  response: false
+}));*/
+app.use('/static', express.static(path.join(__dirname, 'public/compiled')));
 
 //Force language if specified
 app.use(function(req, res, next){

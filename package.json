@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@google/maps": "^0.3.1",
-    "bcrypt": "^1.0.1",
+    "bcryptjs": "^2.4.0",
     "body-parser": "~1.15.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
@@ -25,6 +25,7 @@
     "request": "^2.79.0",
     "sequelize": "^3.27.0",
     "serve-favicon": "~2.3.0",
-    "winston": "^2.3.0"
+    "winston": "^2.3.0",
+    "libxmljs": "0.17.1"
   }
 }

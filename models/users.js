@@ -35,6 +35,9 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     tableName: 'users',
+    timestamps: false,
+    charset: 'utf8',
+    collate: 'utf8_unicode_ci',
     classMethods: {
       associate: function(models) {
         User.hasMany(models.Timetable, { as: 'Timetable', foreignKey: 'idUser'});

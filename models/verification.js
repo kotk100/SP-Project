@@ -19,6 +19,9 @@ module.exports = function(sequelize, DataTypes) {
         }
     }, {
         tableName: 'verification',
+        timestamps: false,
+        charset: 'utf8',
+        collate: 'utf8_unicode_ci',
         classMethods: {
             associate: function(models) {
                 Verification.belongsTo(models.User, { as: 'User', foreignKey: 'idUser'});

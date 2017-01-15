@@ -3,7 +3,7 @@ var logger = require('../config/logger.js');
 var mailer = require('../config/nodemailer.js');
 var express = require('express');
 var router  = express.Router();
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 
 //display page
 router.get('/', function(req, res){
@@ -49,13 +49,13 @@ router.get('/verify/:ver', function(req, res){
 });
 
 //Create verification token and send email for account verification
-var sendVerEmail = function(user){
+var sendVerEmail = function(user, req){
     models.Verification.create({
         idUser: user.idUser,
         verificationCode: user.idUser
     }).then(function(ver){
         logger.debug('Created verification.');
-        mailer.sendEmail(user, '<a href="localhost:3000/register/verify/' + ver.idUser + '">localhost:3000/register/verify/' + ver.idUser + '</a>');
+        mailer.sendEmail(user, '<a href= "' + req.headers.host + '/register/verify/' + ver.idUser + '">' + req.headers.host + '/register/verify/' + ver.idUser + '</a>');
     }, function(err){
         logger.error('Error creating verification!', err);
     });
@@ -100,7 +100,7 @@ router.post('/', function(req, res) {
                         idUser: user.idUser
                     }, {transaction: t}).then(function(setting){
                         logger.info('Created.');
-                        sendVerEmail(user);
+                        sendVerEmail(user, req);
                         req.session.message = req.__('creUser');
                         req.session.error = false;
                     }, function(err){

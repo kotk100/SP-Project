@@ -5,8 +5,13 @@ var path      = require("path");
 var Sequelize = require("sequelize");
 var env       = process.env.NODE_ENV || "development";
 var config    = require(path.join(__dirname, '..', 'config', 'config.json'))[env];
-if (process.env.JAWSDB_MARIA_URL) {
-  var sequelize = new Sequelize(process.env.JAWSDB_MARIA_URL);
+if (process.env.RDS_HOSTNAME) {
+  var host      = process.env.RDS_HOSTNAME,
+      user     = process.env.RDS_USERNAME,
+      password = process.env.RDS_PASSWORD,
+      port     = process.env.RDS_PORT,
+      name     = process.env.RDS_DB_NAME;
+  var sequelize = new Sequelize('mariadb://' + user + ':' + password + '@' + host + ':' + port + '/' + name);
 } else {
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }

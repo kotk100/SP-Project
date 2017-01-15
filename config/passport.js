@@ -2,7 +2,7 @@ var passport = require('passport');
 var logger = require('./logger.js');
 var models  = require('../models');
 var Strategy = require('passport-local').Strategy;
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 
 // Configure the local strategy for use by Passport.
 //
